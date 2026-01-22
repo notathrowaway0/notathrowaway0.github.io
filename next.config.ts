@@ -1,12 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: true,
-output: 'export', // This creates a 'out' folder instead of a server build
-  basePath: '/your-repo-name', // Replace with your actual repository name
+
+  // Required for static export
+  output: "export",
+
+  // Empty string for your specific username.github.io repo
+  basePath: "",
+
   images: {
-    unoptimized: true, // GitHub Pages doesn't support the Next.js Image Optimization API
+    unoptimized: true,
+  }, // This was likely the missing brace causing the error
 };
 
 export default nextConfig;
